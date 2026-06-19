@@ -7,7 +7,7 @@ pipeline{
         stage('continuous download') {
 
             steps{
-                git branch: url, 'git@github.com:njokadeclan/JENKS-PROJECT.git'
+                git branch: url, 'https://github.com/njokadeclan/JENKS-PROJECT.git'
             }
         }
     }
