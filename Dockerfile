@@ -10,8 +10,8 @@ FROM eclipse-temurin:11-jre
 
 WORKDIR /app
 
-COPY --from=build /app/target/uber.jar .
+COPY --from=build /app/target/Uber.jar .
 
 EXPOSE 9090
 
-CMD ["java", "-jar", "uber.jar"]
+CMD ["java", "-jar", "Uber.jar"]
