@@ -4,19 +4,19 @@ pipeline{
 
     stages{
 
-        stage('continuous download') {
+        stage("continuous download") {
 
             steps{
                 git branch: 'main', url: 'https://github.com/njokadeclan/JENKS-PROJECT.git'
             }
         }
-        stage('unit test') {
+        stage("unit test") {
 
             steps{
                 sh'mvn test'
             }
         }
-        stage('integration test') {
+        stage("integration test") {
 
             steps{
                 sh'mvn verify -DskipUnitTests'
@@ -28,7 +28,7 @@ pipeline{
                 sh'mvn clean install'
             }
         }
-        stage('static test analysis') {
+        stage("static test analysis") {
 
             steps{
 
@@ -39,7 +39,7 @@ pipeline{
                 }
             }
         }
-        stage('quality gate analysis') {
+        stage("quality gate analysis") {
 
             steps{
 
@@ -48,7 +48,7 @@ pipeline{
                 }
             }
         }
-        stage('uplaod artifact to nexus') {
+        stage("uplaod artifact to nexus") {
 
             steps{
 
